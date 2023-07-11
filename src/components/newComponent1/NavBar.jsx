@@ -3,6 +3,7 @@ import { ThemeContext } from '../../context/ThemeContext'
 
 export default class NavBar extends Component {
     // Use Static properties
+    // 
     static  contextType=ThemeContext
   render() {
     console.log(this.context)
