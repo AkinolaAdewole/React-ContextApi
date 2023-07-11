@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { ThemeContext } from '../../context/ThemeContext';
+import { AuthContext } from '../../context/AuthContextProvider';
 
 
 export default class BukNav extends Component {
@@ -7,24 +8,29 @@ export default class BukNav extends Component {
    
     return (
       <>
-                  
-              <ThemeContext.Consumer>{(context)=>{
-                const {isLightTheme, light, dark} = context;
-                const theme = isLightTheme ? light : dark
+                  {/* To create multiple consumer */}
+              <AuthContext.Consumer>{(authContext)=>(
+                     <ThemeContext.Consumer>{(themeContext)=>{
+                      const{isAuthenticated, toggleAuth}= authContext
+                      const {isLightTheme, light, dark} = themeContext;
+                      const theme = isLightTheme ? light : dark
+      
+                      return (
+                        <nav style={{background:theme.ui, color:theme.syntax}}>
+                        <h1>Context App</h1>
+      
+                            <div>{isAuthenticated ? loggedIn : loggedOut}</div>
+                        <ul>
+                            <li>Home</li>
+                            <li>Contact</li>
+                            <li>About</li>
+                        </ul>
+                    </nav>
+                      )              
+                    }}
+                      </ThemeContext.Consumer>   
+              )}</AuthContext.Consumer>
 
-                return (
-                  <nav style={{background:theme.ui, color:theme.syntax}}>
-                  <h1>Context App</h1>
-
-                  <ul>
-                      <li>Home</li>
-                      <li>Contact</li>
-                      <li>About</li>
-                  </ul>
-              </nav>
-                )
-              }}
-                </ThemeContext.Consumer>   
       </>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component, createContext} from 'react'
+import AuthContextProvider, { AuthContext } from './AuthContextProvider';
 
 export const  ThemeContext = createContext()
 export default class ThemeContextProvider extends Component {
@@ -17,6 +18,7 @@ export default class ThemeContextProvider extends Component {
   render() {
     return (
       <>
+      {/* To create consuming multiple context */}
           <ThemeContext.Provider value={{...this.state, toggleTheme:this.toggleTheme}}>
             {this.props.children}
           </ThemeContext.Provider>

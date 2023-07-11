@@ -6,7 +6,7 @@ export default class NavBar extends Component {
     // 
     static  contextType=ThemeContext
   render() {
-    console.log(this.context)
+    // console.log(this.context)
     // destructure the component
     const {isLightTheme, light, dark  }=this.context;
     const theme =  isLightTheme ? light : dark;
