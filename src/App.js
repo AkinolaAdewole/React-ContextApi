@@ -12,8 +12,8 @@ function App() {
     <div className="App ">
       <ThemeContextProvider>
         <AuthContextProvider>
-          <NavBar />
-          {/* <BukNav /> */}
+          {/* <NavBar /> */}
+          <BukNav />
           <BookList />
           <Themetoggle />
         </AuthContextProvider>
