@@ -21,9 +21,10 @@ import { ThemeContext } from '../../context/ThemeContext'
 // }
 
 
-import React from 'react'
-
 const BookList = () => {
+   const {isLightTheme,light, dark}=useContext(ThemeContext)
+   const theme= isLightTheme ? light : dark;
+   
   return (
     <>
          <div className='book-list' style={{background:theme.bg, color:theme.syntax}}>

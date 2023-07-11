@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useContext } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
 
 export default class NavBar extends Component {
@@ -28,3 +28,4 @@ export default class NavBar extends Component {
    
   }
 }
+
