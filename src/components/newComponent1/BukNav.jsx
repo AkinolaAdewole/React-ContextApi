@@ -11,23 +11,25 @@ export default class BukNav extends Component {
                   {/* To create multiple consumer */}
               <AuthContext.Consumer>{(authContext)=>(
                      <ThemeContext.Consumer>{(themeContext)=>{
-                      const{isAuthenticated, toggleAuth}= authContext
-                      const {isLightTheme, light, dark} = themeContext;
-                      const theme = isLightTheme ? light : dark
-      
-                      return (
-                        <nav style={{background:theme.ui, color:theme.syntax}}>
-                        <h1>Context App</h1>
-      
-                            <div>{isAuthenticated ? loggedIn : loggedOut}</div>
-                        <ul>
-                            <li>Home</li>
-                            <li>Contact</li>
-                            <li>About</li>
-                        </ul>
-                    </nav>
-                      )              
-                    }}
+                              const{isAuthenticated, toggleAuth}= authContext
+                              const {isLightTheme, light, dark} = themeContext;
+                              const theme = isLightTheme ? light : dark
+              
+                              return (
+
+                                <nav style={{background:theme.ui, color:theme.syntax}}>
+                                <h1>Context App</h1>
+
+                                    <div onClick={toggleAuth}> {isAuthenticated ? 'loggedIn' : 'loggedOut'} </div>
+
+                                <ul>
+                                    <li>Home</li>
+                                    <li>Contact</li>
+                                    <li>About</li>
+                                </ul>
+                            </nav>
+                              )              
+                            }}
                       </ThemeContext.Consumer>   
               )}</AuthContext.Consumer>
 
