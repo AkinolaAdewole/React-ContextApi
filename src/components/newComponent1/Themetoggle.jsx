@@ -13,3 +13,13 @@ export default class Themetoggle extends Component {
     )
   }
 }
+
+import React from 'react'
+
+const Themetoggle = () => {
+  return (
+    <>Themetoggle</>
+  )
+}
+
+export default Themetoggle
