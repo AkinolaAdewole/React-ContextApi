@@ -6,16 +6,19 @@ import ThemeContextProvider from "./context/ThemeContext";
 import BukNav from "./components/newComponent1/BukNav";
 import Themetoggle from "./components/newComponent1/Themetoggle";
 import AuthContextProvider from "./context/AuthContextProvider";
+import BookContextProvider from "./context/BookContextProvider";
 
 function App() {
   return (
     <div className="App ">
       <ThemeContextProvider>
         <AuthContextProvider>
-          {/* <NavBar /> */}
-          <BukNav />
-          <BookList />
-          <Themetoggle />
+                {/* <NavBar /> */}
+                <BukNav />
+              <BookContextProvider>
+                   <BookList />
+              </BookContextProvider>
+                <Themetoggle />
         </AuthContextProvider>
       </ThemeContextProvider>
     </div>

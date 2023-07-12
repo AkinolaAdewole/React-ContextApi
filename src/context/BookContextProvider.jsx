@@ -9,7 +9,11 @@ const BookContextProvider = (props) => {
         {title:'The Trials of brother Jero', id:4}
     ])
   return (
-    <div>BookContextProvider</div>
+    <>
+       <BookContext.Provider value={books}>
+        {props.Children}
+       </BookContext.Provider>
+    </>
   )
 }
 
