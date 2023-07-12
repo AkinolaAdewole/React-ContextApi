@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 
-const BookContext = useContext()
+export const BookContext = useContext()
 const BookContextProvider = (props) => {
     const [books, setBooks]= useState([
         {title:'Things fall apart', id:1},
